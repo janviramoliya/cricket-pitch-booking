@@ -5,13 +5,13 @@ const Booking = sequelize.define(
   "booking",
   {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false,
     },
     user_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.UUID,
       allowNull: false,
       references: {
         model: "user",
@@ -21,7 +21,7 @@ const Booking = sequelize.define(
       onDelete: "CASCADE",
     },
     pitch_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.UUID,
       allowNull: false,
       references: {
         model: "pitch",
@@ -30,7 +30,7 @@ const Booking = sequelize.define(
       onDelete: "CASCADE",
     },
     slot_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.UUID,
       allowNull: false,
       references: {
         model: "slot",
