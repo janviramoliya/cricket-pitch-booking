@@ -8,6 +8,7 @@ require("../models/user.model");
 require("../models/pitch.model");
 require("../models/slot.model");
 require("../models/booking.model");
+require("../models/session.model");
 
 // import associations
 require("../models/associations");

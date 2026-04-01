@@ -2,7 +2,7 @@ const CustomError = require("../errors");
 const { isTokenValid } = require("../utils/jwt");
 
 const authenticateUser = async (req, res, next) => {
-  const token = req.signedCookies.token;
+  const token = req.signedCookies.access_token;
 
   if (!token) {
     throw new CustomError.UnauthenticatedError("Authentication Invalid");

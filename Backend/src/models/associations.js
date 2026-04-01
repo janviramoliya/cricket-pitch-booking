@@ -2,6 +2,17 @@ const User = require("./user.model");
 const Pitch = require("./pitch.model");
 const Slot = require("./slot.model");
 const Booking = require("./booking.model");
+const Session = require("./session.model");
+
+// User & Session
+User.hasMany(Session, {
+  foreignKey: "userId",
+  onDelete: "CASCADE",
+});
+
+Session.belongsTo(User, {
+  foreignKey: "userId",
+});
 
 // User & Booking
 User.hasMany(Booking, {
